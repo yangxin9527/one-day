@@ -1,4 +1,10 @@
 {
+	"easycom": {
+	  "autoscan": true,
+	  "custom": {
+		 
+	  }
+	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
 			"path": "pages/index/index",
@@ -6,11 +12,47 @@
 				"navigationBarTitleText": "uni-app"
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/settings/settings",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/add-clock-in/add-clock-in",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "新增打卡",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+      
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+	    "color": "#7A7E83",
+	    "selectedColor": "#333333",
+	    "borderStyle": "black",
+	    "backgroundColor": "#ffffff",
+	    "list": [{
+	        "pagePath": "pages/index/index",
+	        "iconPath": "static/tab/home.png",
+	        "selectedIconPath": "static/tab/home-fill.png",
+	        "text": "首页"
+	    }, {
+	        "pagePath": "pages/settings/settings",
+	        "iconPath": "static/tab/set.png",
+	        "selectedIconPath": "static/tab/set-fill.png",
+	        "text": "设置"
+	    }]
 	}
 }

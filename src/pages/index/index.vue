@@ -1,49 +1,78 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
+	<view class="home-wrap">
+		<view class="container-title">
+			<text>每日打卡</text>
+			<image class="add" src="/static/add.png"  @click="add" ></image>
 		</view>
+		<view class="clock-in-list">
+			<view class="item" v-for='item in clockinList'>
+				<clockin-img class="item-img" :code='item.code'></clockin-img>
+				<text>{{item.name}}</text>
+			</view>
+		
+			
+		</view>
+		<!-- <view class="container-title">
+			<text>待办</text>
+			<image class="add" src="/static/add.png" ></image>
+		</view> -->
+		
 	</view>
 </template>
 
 <script>
 	export default {
 		data() {
+		
 			return {
-				title: 'Hello'
+				clockinList:[]
 			}
 		},
-		onLoad() {
-
+		onShow(){
+			let clockin = uni.getStorageSync('clockin');
+			let clockinList = [];
+			if(clockin){
+				clockinList = JSON.parse(clockin)
+			}
+			this.clockinList=clockinList;
 		},
-		methods: {
-
+		methods:{
+			add(){
+				console.log(1);
+				uni.navigateTo({
+				    url: '/pages/add-clock-in/add-clock-in'
+				});
+			}
 		}
+		
 	}
 </script>
 
-<style>
-	.content {
+<style lang='scss' scoped>
+	.container-title{
 		display: flex;
-		flex-direction: column;
+		padding: 15px;
 		align-items: center;
-		justify-content: center;
+		font-size: 20px;
+		.add{
+			width: 30px;
+			height: 30px;
+		}
 	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
+	.clock-in-list{
 		display: flex;
-		justify-content: center;
+		flex-wrap: wrap;
+		.item{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		.item-img{
+		
+			width: 100px;
+			height: 100px;
+		}
 	}
 
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
 </style>

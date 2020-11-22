@@ -1,19 +1,23 @@
 # one-day
 
-## Project setup
-```
-yarn install
-```
+长按删除,点击完成 点击撤销, 
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+- 点添加,自动开语音,说完 自动选择图标和补上文字
 
-### Compiles and minifies for production
-```
-yarn build
-```
+显示在-1屏 和桌面上
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+待办:
+- 和打卡类似
+
+
+
+设置
+
+- 数据统计
+- 加入qq群
+- 意见反馈
+
+
+
